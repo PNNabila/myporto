@@ -1,0 +1,119 @@
+/* Section Background: Gradasi sangat halus dari putih ke pink super muda */
+.skills-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #fff0f3 100%);
+    position: relative;
+}
+
+/* --- JUDUL SKILL --- */
+.skills-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.skills-section p {
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    /* Margin bawah biar jarak ke kartu lega */
+}
+
+/* --- KARTU SKILL (REVISI TOTAL) --- */
+.skill-card {
+    background: #ffffff;
+    border-radius: 25px;
+    /* Lebih bulat biar feminim */
+    border: none;
+    /* Hapus border abu-abu jelek */
+    /* Shadow awal: Lembut banget */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    /* Biar efek hover ga bocor */
+    position: relative;
+    z-index: 1;
+}
+
+/* Dekorasi hiasan bulat samar di dalam kartu (pojok kanan atas) */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: var(--pink-soft);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: 0.4s;
+    z-index: -1;
+}
+
+/* EFEK HOVER KARTU: Glowing Pink */
+.skill-card:hover {
+    transform: translateY(-12px);
+    /* Naik lebih tinggi */
+    /* Shadow jadi Pink Glowing */
+    box-shadow: 0 20px 50px rgba(255, 143, 163, 0.3);
+}
+
+.skill-card:hover::before {
+    transform: scale(3);
+    /* Lingkaran background membesar memenuhi kartu */
+    opacity: 0.1;
+    /* Jadi background pink tipis */
+}
+
+.skill-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- BADGES / TABLET SKILL (REVISI: JARAK & LAYOUT) --- */
+.skill-badge {
+    /* --- TAMBAHAN BARU (LAYOUTING) --- */
+    display: inline-flex;
+    /* Ganti inline-block jadi flex biar sejajar */
+    align-items: center;
+    /* Logo dan Teks rata tengah secara vertikal */
+    justify-content: center;
+    gap: 10px;
+    /* INI PENTING: Jarak 10px antara Logo dan Tulisan */
+
+    /* --- STYLE LAMA TETAP ADA --- */
+    /* Default: Pink Muda (Bukan Putih) */
+    background-color: #ffe5ec;
+    color: var(--pink-dark);
+    /* Teks Pink Tua biar terbaca */
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 5px;
+    /* Jarak antar badge */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid transparent;
+    /* Persiapan border */
+    cursor: default;
+}
+
+/* Pastikan ukuran Icon konsisten */
+.skill-badge svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    /* Mencegah bug spasi bawah pada svg */
+}
+
+/* HOVER BADGE: Jadi Pink Tua Solid */
+.skill-badge:hover {
+    background-color: var(--pink-primary);
+    color: white;
+    transform: scale(1.1);
+    /* Membesar sedikit */
+    box-shadow: 0 5px 15px rgba(255, 143, 163, 0.5);
+}

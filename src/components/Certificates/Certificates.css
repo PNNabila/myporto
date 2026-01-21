@@ -1,0 +1,245 @@
+.certificates-section {
+    padding: 120px 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- CONTAINER KARTU DENGAN BLOB --- */
+.cert-card-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hiasan Blob Abstrak di Belakang Kartu */
+.cert-blob {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffe5ec 0%, #fff0f3 100%);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    /* Bentuk organik */
+    z-index: -1;
+    /* Di belakang kartu */
+    opacity: 0.7;
+    transition: all 0.5s ease;
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Pas Hover, Blobnya bergerak dikit */
+.cert-card-container:hover .cert-blob {
+    transform: rotate(0deg) scale(1.15) translateY(10px);
+    background: linear-gradient(135deg, #ffc2d1 0%, #ffe5ec 100%);
+}
+
+/* --- CARD STYLE UTAMA --- */
+.cert-card {
+    border: none;
+    border-radius: 25px;
+    /* Lebih bulat */
+    overflow: hidden;
+    /* Shadow lebih soft tapi menyebar */
+    box-shadow: 0 15px 35px rgba(201, 24, 74, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    /* Sedikit transparan biar blob kelihatan dikit */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.cert-card:hover {
+    /* Shadow pink glowing pas hover */
+    box-shadow: 0 20px 40px rgba(255, 143, 163, 0.3);
+    border-color: var(--pink-soft);
+    /* transform ditangani oleh framer motion di parent */
+}
+
+.cert-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    background: #f8f9fa;
+    margin: 10px;
+    /* Ada jarak dikit dari pinggir kartu */
+    border-radius: 20px;
+}
+
+.cert-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cert-card:hover .cert-img {
+    transform: scale(1.1);
+}
+
+/* --- HOVER OVERLAY (SAMA DENGAN PROJECTS) --- */
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 143, 163, 0.4));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover .cert-overlay {
+    opacity: 1;
+}
+
+.eye-icon-cert {
+    font-size: 2.5rem;
+    color: var(--pink-primary);
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+}
+
+.view-text {
+    color: var(--pink-dark);
+    font-weight: 700;
+}
+
+/* Teks dalam Card */
+.issuer-badge {
+    display: inline-block;
+    background: var(--pink-primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cert-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 15px 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- TOMBOL "SEE ALL" BARU --- */
+.btn-see-all {
+    background: white;
+    color: var(--pink-primary);
+    border: 2px solid var(--pink-primary);
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 143, 163, 0.15);
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-see-all:hover {
+    background: var(--pink-primary);
+    color: white;
+    box-shadow: 0 15px 30px rgba(255, 143, 163, 0.4);
+    transform: translateY(-3px);
+}
+
+/* --- MODAL STYLES --- */
+.custom-backdrop {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* Backdrop untuk modal detail (lebih gelap biar numpuknya enak) */
+.custom-backdrop-darker {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(8px) !important;
+    z-index: 1055 !important;
+    /* Di atas modal list */
+}
+
+.pink-modal-content {
+    border-radius: 30px !important;
+    border: none !important;
+    background: #fff !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Biar modal list bisa di-scroll kalau isinya banyak */
+.scrollable-modal .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    /* Custom Scrollbar untuk modal */
+    scrollbar-width: thin;
+    scrollbar-color: var(--pink-soft) #f0f0f0;
+}
+
+/* (Style Modal Detail sisanya sama seperti sebelumnya...) */
+.modal-cert-img-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 5px solid #fff0f3;
+}
+
+.modal-cert-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.modal-description-card {
+    position: relative;
+    background: linear-gradient(135deg, #fff0f3 0%, #fff 100%);
+    padding: 35px;
+    border-radius: 25px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    border: 1px solid rgba(255, 143, 163, 0.2);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.quote-icon-bg {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 6rem;
+    color: var(--pink-primary);
+    opacity: 0.07;
+    z-index: 0;
+}
+
+.btn-verify {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--pink-primary), #ff5c8d);
+    color: white;
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(255, 143, 163, 0.3);
+}
+
+.btn-verify:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 143, 163, 0.5);
+}

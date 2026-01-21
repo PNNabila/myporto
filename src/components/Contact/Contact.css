@@ -1,0 +1,289 @@
+.contact-section {
+    padding: 120px 0;
+    position: relative;
+    background-color: #fff;
+    /* Fallback */
+    overflow: hidden;
+    /* Biar animasi ga keluar layar */
+    min-height: 80vh;
+    /* Biar tinggi */
+    display: flex;
+    align-items: center;
+}
+
+.z-index-1 {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- ANIMATED BACKGROUND SHAPES (AURORA EFFECT) --- */
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    background: white;
+}
+
+.shape {
+    position: absolute;
+    filter: blur(80px);
+    /* Blur Kuat biar jadi gradasi */
+    opacity: 0.6;
+    animation: floatShape 10s infinite alternate ease-in-out;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: #ffc2d1;
+    /* Pink Muda */
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: #ff99ac;
+    /* Pink Sedang */
+    bottom: -5%;
+    right: -5%;
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: #ffe5ec;
+    /* Putih Pink */
+    top: 40%;
+    left: 40%;
+    animation-delay: -2s;
+}
+
+@keyframes floatShape {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
+}
+
+/* --- MAIN CTA GLASS CARD --- */
+.cta-glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    /* Transparan */
+    backdrop-filter: blur(20px);
+    /* Efek Kaca */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 80px 40px;
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(255, 143, 163, 0.15);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sub-title {
+    color: var(--pink-primary);
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: #333;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+/* Text Gradient Effect */
+.text-gradient {
+    background: linear-gradient(45deg, var(--pink-primary), #ff5c8d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-desc {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+/* Button with Glow Animation */
+.btn-connect-glow {
+    background: linear-gradient(90deg, var(--pink-primary), #ff5c8d);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 64, 129, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-connect-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.btn-connect-glow:hover::before {
+    left: 100%;
+    /* Kilatan cahaya pas hover */
+}
+
+/* --- MODAL STYLES (MODERN) --- */
+.blur-backdrop {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(15px) !important;
+    /* Blur Kuat di belakang modal */
+    -webkit-backdrop-filter: blur(15px) !important;
+}
+
+.glass-modal-content {
+    border-radius: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    /* Putih agak transparan */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal-title-custom {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
+
+/* Modern Input Fields */
+.input-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--pink-primary);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    /* Memastikan layout aman */
+    align-items: center;
+}
+
+.field-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    z-index: 10;
+    pointer-events: none;
+    /* Biar klik tembus ke input */
+}
+
+.textarea-icon {
+    top: 25px;
+    /* Khusus textarea iconnya di atas */
+    transform: none;
+}
+
+.input-modern {
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    border-radius: 15px;
+
+    /* --- PERBAIKAN DI SINI: Padding kiri diperlebar & pakai !important --- */
+    padding: 15px 15px 15px 60px !important;
+
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.input-modern:focus {
+    background: white;
+    border-color: var(--pink-primary);
+    box-shadow: 0 5px 20px rgba(255, 143, 163, 0.15);
+    outline: none;
+}
+
+.input-modern:focus+.field-icon,
+.input-wrapper:focus-within .field-icon {
+    color: var(--pink-primary);
+}
+
+/* Submit Button Gradient */
+.btn-submit-gradient {
+    background: linear-gradient(135deg, var(--pink-primary) 0%, #ff8fa3 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 25px rgba(255, 143, 163, 0.3);
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 143, 163, 0.5);
+}
+
+/* ... (Kode CSS sebelumnya biarkan saja) ... */
+
+/* --- TOAST NOTIFICATION STYLE --- */
+.custom-toast {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+    border: 1px solid rgba(255, 143, 163, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden;
+}
+
+.toast-header-custom {
+    background: #fff0f3 !important;
+    /* Header Pink Muda */
+    color: #333;
+    border-bottom: 1px solid rgba(255, 143, 163, 0.2) !important;
+}
+
+.toast-body-custom {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 15px !important;
+}
+
+/* RESPONSIVE TEXT */
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2.5rem;
+    }
+}

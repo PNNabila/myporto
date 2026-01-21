@@ -1,0 +1,435 @@
+.experience-section {
+    padding: 100px 0;
+    background-color: #fff5f7;
+    position: relative;
+}
+
+/* --- TIMELINE CONTAINER --- */
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    /* Lebar optimal */
+    margin: 0 auto;
+}
+
+/* Garis Tengah */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #ffe5ec;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 10px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* POSISI ITEM (Kiri & Kanan) */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    /* HAPUS text-align: right DISINI biar gak rata kanan */
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Dot Tengah */
+.timeline-dot {
+    width: 22px;
+    height: 22px;
+    background-color: var(--pink-primary);
+    border: 4px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+    right: -11px;
+    z-index: 2;
+    box-shadow: 0 0 0 4px #ffe5ec;
+    transition: 0.3s;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -11px;
+}
+
+/* --- CARD STYLE (KONTEN) --- */
+.timeline-content {
+    /* Padding disesuaikan dengan isi (fit content) */
+    padding: 30px;
+
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(255, 143, 163, 0.1);
+
+    /* WAJIB: Paksa semua teks rata kiri */
+    text-align: left !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 143, 163, 0.2);
+    border-color: var(--pink-soft);
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.3);
+    background-color: white;
+    border-color: var(--pink-primary);
+}
+
+/* --- REVISI HOVER OVERLAY (GLASSMORPHISM) --- */
+/* Biar sama kayak Project & Sertifikat */
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Efek Kaca Buram */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    /* Gradasi Transparan (Bukan Pink Blok) */
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 143, 163, 0.4));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.timeline-item:hover .hover-overlay {
+    opacity: 1;
+}
+
+/* Warna Icon & Teks saat Hover (Jadi Pink Gelap karena background terang) */
+.eye-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--pink-primary);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.hover-overlay span {
+    color: var(--pink-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Text Styles */
+.date-badge {
+    display: inline-block;
+    background: #ffe5ec;
+    color: var(--pink-dark);
+    padding: 6px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    align-self: flex-start;
+    /* Pastikan badge selalu di kiri */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.company-logo-sm {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-right: 15px;
+}
+
+.role-title {
+    font-weight: 800;
+    color: #333;
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.company-name {
+    color: var(--pink-primary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    /* Hapus margin default berlebih */
+}
+
+/* --- MODAL STYLES (Tetap Sama) --- */
+.pink-modal-content {
+    border-radius: 25px !important;
+    border: none !important;
+    background: white !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modal-logo-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff0f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-company-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-role-title {
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.modal-company-badge {
+    background: var(--pink-primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.modal-description-card {
+    position: relative;
+    background: linear-gradient(135deg, #fff0f3 0%, #fff 100%);
+    padding: 30px;
+    border-radius: 20px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    border: 1px solid rgba(255, 143, 163, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.quote-icon-bg {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 5rem;
+    color: var(--pink-primary);
+    opacity: 0.08;
+}
+
+/* --- GROUP ACTIVITY STYLES --- */
+.activity-groups-container {
+    padding: 0 5px;
+}
+
+.group-title {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-left: 3px solid var(--pink-primary);
+    padding-left: 10px;
+}
+
+.link-icon-badge {
+    width: 24px;
+    height: 24px;
+    background: #f8f9fa;
+    color: var(--pink-primary);
+    border: 1px solid var(--pink-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.link-icon-badge:hover {
+    background: var(--pink-primary);
+    color: white;
+    transform: scale(1.1) rotate(-15deg);
+    box-shadow: 0 3px 8px rgba(201, 24, 74, 0.2);
+}
+
+.group-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.task-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.check-icon-sm {
+    color: var(--pink-primary);
+    margin-right: 10px;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+/* --- GALLERY GRID --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item.item-0 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item.item-1 {
+    grid-row: span 2;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(201, 24, 74, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallery-item:hover .img-overlay {
+    opacity: 1;
+}
+
+.border-top {
+    border-top: 1px dashed #eee !important;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 10px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-dot {
+        left: 18px;
+        right: auto;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 18px;
+    }
+
+    .timeline-content {
+        padding: 30px 25px;
+    }
+}

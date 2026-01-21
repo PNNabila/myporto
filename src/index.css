@@ -1,0 +1,78 @@
+/* 1. IMPORT FONT (Playfair Display & Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 2. DEFINISI WARNA GLOBAL (Variables) */
+:root {
+  --pink-primary: #c9184a;
+  /* Pink Tua Utama */
+  --pink-dark: #800f2f;
+  /* Pink Gelap (Text) */
+  --pink-soft: #ffccd5;
+  /* Pink Lembut (Background/Aksen) */
+  --pink-light: #fff0f3;
+  /* Pink Sangat Muda (Background Section) */
+  --text-primary: #333333;
+  --bg-white: #ffffff;
+}
+
+/* 3. BASE STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  /* Font Utama untuk Teks Biasa */
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  /* Mencegah scroll samping */
+}
+
+/* Judul Pakai Font Mewah */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Smooth Scrolling untuk Navigasi */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 4. CUSTOM SCROLLBAR (Biar Keren!) */
+/* Lebar Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track (Jalur Scrollbar) */
+::-webkit-scrollbar-track {
+  background: #fff0f3;
+  /* Pink sangat muda */
+}
+
+/* Thumb (Batang Scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--pink-primary), #ff8fa3);
+  /* Gradasi Pink */
+  border-radius: 10px;
+  /* Bulat */
+  border: 2px solid #fff0f3;
+  /* Ada border putih dikit biar manis */
+}
+
+/* Pas di-hover scrollbarnya */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-dark);
+}
+
+/* 5. CUSTOM TEXT SELECTION (Pas nge-blok teks) */
+::selection {
+  background-color: var(--pink-primary);
+  /* Latar Pink */
+  color: #ffffff;
+  /* Teks Putih */
+}

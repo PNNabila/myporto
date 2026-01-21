@@ -1,0 +1,165 @@
+/* --- UPDATE: Outline Tegas & Shadow --- */
+.footer-modern {
+    /* Background Gradasi tetap dipertahankan */
+    background: linear-gradient(to bottom, #ffffff 0%, #fff5f7 100%);
+
+    padding: 60px 0;
+    position: relative;
+
+    /* 1. BORDER TEGAS: Lebih tebal dan warnanya pink solid */
+    border-top: 4px solid #ffe5ec;
+
+    /* 2. SHADOW KUAT KE ATAS: Memberikan efek dimensi pemisah */
+    /* (0 -20px) artinya bayangan mengarah ke atas */
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.06);
+
+    /* Pastikan footer ada di atas elemen background lain */
+    z-index: 10;
+}
+
+/* Flex Container */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* --- STYLE KIRI --- */
+.footer-left {
+    max-width: 400px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.dot {
+    color: var(--pink-primary);
+}
+
+.footer-desc {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.heart-beat {
+    color: var(--pink-primary);
+    display: inline-block;
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* --- STYLE KANAN --- */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+    margin-right: 5px;
+}
+
+.social-item {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #ffffff;
+    color: var(--pink-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 143, 163, 0.1);
+}
+
+.social-item:hover {
+    background: var(--pink-primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 143, 163, 0.3);
+    border-color: transparent;
+}
+
+/* Tombol Scroll Top */
+.btn-scroll-top {
+    background: white;
+    border: 1px solid rgba(255, 143, 163, 0.2);
+    color: var(--pink-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.btn-scroll-top:hover {
+    background: var(--pink-primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-modern {
+        padding: 40px 0;
+        text-align: left;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

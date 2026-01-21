@@ -1,0 +1,77 @@
+/* Navbar dengan Garis Bawah Tegas */
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 15px 0;
+    border-bottom: 2px solid rgba(255, 143, 163, 0.5);
+    box-shadow: 0 4px 20px rgba(255, 143, 163, 0.1);
+}
+
+.brand-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #2d2d2d;
+}
+
+/* Link Styling */
+.nav-link {
+    font-weight: 500;
+    margin: 0 8px;
+    color: #555 !important;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Efek Garis Jalan dari Kiri ke Kanan */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--pink-primary);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--pink-primary) !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- PERBAIKAN TOMBOL CONTACT --- */
+.btn-contact {
+    /* Saat NORMAL (Tidak di-hover) */
+    background-color: transparent !important;
+    /* Latar transparan */
+    color: var(--pink-primary) !important;
+    /* Teks pink */
+    border: 2px solid var(--pink-primary) !important;
+    /* Garis pinggir pink */
+    padding: 8px 25px !important;
+    border-radius: 50px;
+    font-weight: 600;
+    /* Sedikit lebih tebal biar jelas */
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    /* Saat DI-HOVER */
+    background-color: var(--pink-primary) !important;
+    /* Latar jadi pink penuh */
+    color: white !important;
+    /* Teks jadi putih */
+    border-color: var(--pink-primary) !important;
+    /* Border sama dengan latar */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 143, 163, 0.6);
+}
+
+/* Hapus garis bawah khusus untuk tombol contact biar ga dobel */
+.btn-contact::after {
+    display: none;
+}

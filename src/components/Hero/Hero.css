@@ -1,0 +1,124 @@
+/* src/components/Hero/Hero.css */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fff0f3 0%, #ffffff 100%);
+    /* Pastikan section utama punya z-index dasar */
+    z-index: 1;
+}
+
+/* --- FIX Z-INDEX DISINI --- */
+
+/* 1. Kontainer Teks harus lebih tinggi layernya */
+/* Kita targetin kolom bootstrap yang nampung teks */
+.hero-section .row>.col-md-7 {
+    position: relative;
+    z-index: 10;
+    /* Layer depan (di atas blob) */
+}
+
+/* 2. Blob Gradasinya di layer belakang */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 2;
+    /* Layer belakang (di bawah teks, tapi di atas background putih) */
+    animation: float 8s infinite alternate;
+    pointer-events: none;
+    /* Biar ga ngehalangin kalo mau seleksi teks */
+}
+
+/* --- END FIX --- */
+
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #2d2d2d;
+}
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--pink-dark);
+}
+
+.greeting-pill {
+    background: white;
+    color: var(--pink-dark);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(255, 143, 163, 0.2);
+    display: inline-block;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 550px;
+}
+
+/* Buttons */
+.btn-hero-primary {
+    background: var(--pink-primary);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-right: 15px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 143, 163, 0.5);
+}
+
+.btn-hero-primary:hover {
+    background: var(--pink-dark);
+    transform: translateY(-3px);
+}
+
+.btn-hero-secondary {
+    background: transparent;
+    color: var(--pink-dark);
+    border: 2px solid var(--pink-primary);
+    padding: 10px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-hero-secondary:hover {
+    background: var(--pink-soft);
+}
+
+
+.blob-1 {
+    width: 450px;
+    height: 450px;
+    background: rgba(255, 143, 163, 0.45);
+    top: -120px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 180, 200, 0.5);
+    bottom: 20px;
+    right: -80px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(20px, 40px);
+    }
+}
