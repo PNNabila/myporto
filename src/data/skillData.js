@@ -9,7 +9,7 @@ import pycharmIcon from '../assets/pycharmpng.png';
 import capcutIcon from '../assets/Capcut.png';    // Cek C besar/kecil
 
 // PERBAIKAN UTAMA: Pastikan nama file ini sesuai dengan yang di folder
-import googleIcon from '../assets/googleworkspacepng.png';
+import googleIcon from '../assets/Googleworkspacepng';
 
 import softrIcon from '../assets/softrpng.png';
 import wordIcon from '../assets/wordpng.png';        // Cek path ../
