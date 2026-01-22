@@ -68,7 +68,7 @@ const Certificates = () => {
                     >
                         My <span className="text-pink">Certificates</span>
                     </motion.h2>
-                    <p className="text-muted">Bukti kompetensi dan pengembangan profesional saya</p>
+                    <p className="text-muted">Evidence of my competence and professional development</p>
                 </div>
 
                 {/* --- TAMPILAN UTAMA (HANYA 3 ITEM) --- */}

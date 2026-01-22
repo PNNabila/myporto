@@ -34,7 +34,7 @@ const Experience = () => {
                     >
                         My <span className="text-pink">Experience</span>
                     </motion.h2>
-                    <p className="text-muted">Perjalanan karir dan kontribusi saya</p>
+                    <p className="text-muted">My Experience and Contributions</p>
                 </div>
 
                 <div className="timeline">
