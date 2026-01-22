@@ -74,7 +74,7 @@ export const experienceData = [
     },
     {
         id: 2,
-        role: "LaboratoryResearch Assistant",
+        role: "Laboratory Research Assistant",
         company: "Mobile Communications Research Laboratory",
         logo: mobcommm,
         date: "2025 - Present",
@@ -185,7 +185,7 @@ export const experienceData = [
     },
     {
         id: 5,
-        role: "International Academic Programt",
+        role: "International Academic Program",
         company: "Inbound EduTrip – Universiti Malaya (UM)",
         logo: icao,
         date: "November 23-28, 2025",

@@ -27,7 +27,7 @@ const Hero = () => {
                                 of Telecommunication <span className="outline-text">Engineering .</span>
                             </h1>
                             <p className="hero-desc mt-3">
-                                Specialize in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products for the future of technology.
+                                Learning, exploring, and growing in technology and design.
                             </p>
 
                             {/* --- BAGIAN TOMBOL DOWNLOAD DIPERBAIKI --- */}
