@@ -23,7 +23,8 @@ const Hero = () => {
                             <span className="greeting-pill">🌸 Welcome to my portfolio</span>
                             <h1 className="hero-title mt-4">
                                 Hi, I'm <span className="text-pink">Nahda</span> <br />
-                                Student of Telecommunication <span className="outline-text">Engineering .</span>
+                                Student <span className="outline-text"></span>
+                                of Telecommunication <span className="outline-text">Engineering .</span>
                             </h1>
                             <p className="hero-desc mt-3">
                                 Specialize in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products for the future of technology.
@@ -31,7 +32,6 @@ const Hero = () => {
 
                             {/* --- BAGIAN TOMBOL DOWNLOAD DIPERBAIKI --- */}
                             <div className="mt-4 d-flex gap-3">
-                                <button className="btn-hero-primary">View Projects</button>
 
                                 <a
                                     href={resumeFile}

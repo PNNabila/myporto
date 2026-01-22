@@ -34,7 +34,7 @@ export const certificateData = [
         issuer: "B-One Computer",
         date: "December 31, 2024",
         image: excel1, excel2,
-        credentialLink: "null",
+        credentialLink: null,
         description: "Completed the Microsoft Office Excel course with a final score of 82.66 (Grade A). Mastered Excel formulas and practical applications."
     },
     {
@@ -43,7 +43,7 @@ export const certificateData = [
         issuer: "B-One Computer",
         date: "December 31, 2024",
         image: python1, python2,
-        credentialLink: "null",
+        credentialLink: null,
         description: "Completed the Python Programming course with a final score of 82.67 (Grade A). Covered Programming Algorithms, Python Introduction, and Applications."
     },
     {
@@ -52,7 +52,7 @@ export const certificateData = [
         issuer: "Faculty of Computer Science & Information Technology",
         date: "November 24-28, 2028",
         image: sertifedu,
-        credentialLink: "null",
+        credentialLink: null,
         description: "Successfully participated in the Inbound Programme organized by the Faculty of Computer Science & Information Technology, Universiti Malaya."
     },
     {
@@ -61,7 +61,7 @@ export const certificateData = [
         issuer: "Telkom University",
         date: "February 15, 2023",
         image: nari,
-        credentialLink: "null",
+        credentialLink: null,
         description: "Participated as a Performer in the 'Pelepasan Mahasiswa Inbound' event for the Merdeka Student Exchange Program (PMM) Batch 2."
     }
 

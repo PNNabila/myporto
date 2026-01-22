@@ -215,7 +215,7 @@ export const experienceData = [
         company: "SES UKM Storytelling",
         logo: sestelu,
         date: "2022",
-        description: "eveloping public speaking and narration skills through creative storytelling.",
+        description: "Developing public speaking and narration skills through creative storytelling.",
         fullDescription: "Active member of the Student English Society (SES), focusing on professional public speaking and narration skills.",
         activityGroups: [
             {
@@ -235,12 +235,12 @@ export const experienceData = [
     },
     {
         id: 7,
-        role: "Storytelling Active Member",
+        role: " Traditional Dancer",
         company: "Embun UKM (Traditional Dance)",
         logo: embun,
         date: "2022",
         description: "Preserving cultural heritage through traditional dance performances.",
-        fullDescription: "Active member of the Student English Society (SES), focusing on professional public speaking and narration skills.",
+        fullDescription: "Participating in traditional dances in the Embun Student Activity Unit, performing at various events to introduce Indonesian culture, developing physical discipline and artistic expression within the team.",
         activityGroups: [
             {
                 title: null,
